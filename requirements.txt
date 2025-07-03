@@ -1,0 +1,38 @@
+Project Requirements: SQLi Attack Detector
+
+This document outlines the essential libraries, knowledge base, and tools required to understand, run, and further develop the SQLi Attack Detector project.
+
+1. Python Environment & Libraries:
+
+   - Python 3.8+: The core programming language.
+   - pandas: For efficient data handling, manipulation, and DataFrame operations (loading JSON, feature engineering).
+   - numpy: For numerical operations, especially with arrays and mathematical functions.
+   - scikit-learn: For traditional machine learning utilities, including StandardScaler, OneHotEncoder, train_test_split, and various metrics (accuracy_score, f1_score, roc_auc_score, classification_report, confusion_matrix).
+   - PyTorch: The primary deep learning framework for building, training, and running the Multi-Layer Perceptron (MLP) model, and for leveraging GPU acceleration.
+   - transformers: For loading and utilizing pre-trained Transformer models (specifically DistilRoBERTa) for generating embeddings from text (content and URLs).
+   - joblib: For saving and loading trained scikit-learn models (like StandardScaler, OneHotEncoder).
+   - streamlit: For building the interactive web-based user interface (frontend).
+   - matplotlib: For creating visualizations (e.g., pie charts) within the Streamlit app.
+   - json: For parsing and handling JSON data structures.
+   - urllib.parse: For URL decoding.
+   - smtplib: Pythons built-in SMTP client library for sending emails.
+   - email.mime.text, email.mime.multipart: For constructing email messages with text and HTML content.
+
+2. Knowledge Base:
+
+   - Python Programming: Strong foundational knowledge of Python syntax, data structures (lists, dictionaries, classes), functions, and object-oriented programming concepts.
+   - Data Preprocessing: Understanding of techniques like Feature Engineering (e.g., length from content), Text Preprocessing (URL decoding), Categorical Encoding (one-hot encoding), Numerical Scaling (Standardization), and the critical principle of consistency between training and inference.
+   - Machine Learning Fundamentals: Understanding of supervised learning (classification problem), model training (train/validation/test sets), and evaluation metrics (Accuracy, F1-Score, ROC AUC, Confusion Matrix).
+   - Deep Learning Concepts: Basic understanding of neural networks (layers, neurons, activation functions), Multi-Layer Perceptrons (MLPs), optimizers (Adam), loss functions (Binary Cross-Entropy Loss), regularization (Dropout), and early stopping.
+   - Natural Language Processing (NLP): Basic understanding of Transformer models (like DistilRoBERTa) and how they generate contextual embeddings, specifically the [CLS] token embedding.
+   - Web Development (Streamlit): Basic understanding of how Streamlit apps function, including caching resources and using various Streamlit widgets.
+   - Email Protocols: Basic understanding of SMTP for sending emails.
+   - Environment Variables: Knowledge of how to set and use environment variables for sensitive information (e.g., email credentials).
+
+3. Tools & Environment:
+
+   - Integrated Development Environment (IDE): VS Code, PyCharm, or Jupyter Notebooks/Lab for development.
+   - Terminal/Command Line: For running pip install commands and streamlit run.
+   - GPU (Optional but Highly Recommended): An NVIDIA GPU with CUDA support is strongly recommended for faster Transformer embedding generation and PyTorch MLP training.
+   - Internet Connection: Required for initial download of Transformer models from Hugging Face Hub (unless pre-saved locally).
+   - Email Account: A configured email account (e.g., Gmail with App Passwords enabled) for sending notifications.

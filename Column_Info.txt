@@ -1,0 +1,18 @@
+Column_Name	    Description
+Column1:	    This seems redundant (just says "Normal") — possibly a placeholder or duplicate. Could be dropped.
+Method:	        HTTP method used (GET, POST, etc.). Important for identifying attack types.
+User-Agent:	    Identifies the browser or tool making the request. Usually harmless, but can be forged.
+Pragma:	        Used to control caching behavior (e.g., no-cache).
+Cache-Control:	Another cache-related header, similar to Pragma.
+Accept:	        What media types the client can understand (text/html, etc.).
+Accept-Encoding:Specifies compression algorithms accepted (gzip, etc.).
+Accept-Charset:	Which character sets are acceptable. Useful to check for encoding tricks.
+Language:	    Preferred language of the client (e.g., en).
+Host:	        The domain and port the request is sent to (localhost:8080).
+Cookie:	        Contains session info (JSESSIONID=...). Attacks might target or manipulate this.
+Content-Type:	Describes the format of the request body (e.g., application/x-www-form-urlencoded).
+Connection:	    Type of connection (close, keep-alive).
+Length:	        Payload size. 
+Content:	    The actual payload (for POST requests). Crucial for detecting SQL/XSS injections.
+Classification:	Label for the sample: Normal, SQLi, or XSS. Used for supervised training. [in 0 or 1]
+URL:	        The URL endpoint accessed, including query parameters. Also crucial for pattern-based attacks.
