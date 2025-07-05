@@ -4,7 +4,7 @@ This project implements an SQL Injection attack detection system that processes 
 
 The DATASET used in this project was taken from: https://www.kaggle.com/datasets/ispangler/csic-2010-web-application-attacks
 
-**Setup Instructions**
+**SETUP INSTRUCTIONS**
 
 Follow these steps to get the SQLi Attack Detector up and running on your local machine.
 Prerequisites
@@ -33,6 +33,7 @@ If this is a new project, create a directory:
     cd sqli_detector
 
 Then, place your app.py file and all the prerequisite model/preprocessor files (saved_distilroberta_inference/, best_pytorch_mlp_model.pth, length_scaler2.pkl, method_encoder.pkl) into this sqli_detector directory.
+
 2. Create a Virtual Environment (Recommended)
 
 It's highly recommended to use a virtual environment to manage dependencies:
