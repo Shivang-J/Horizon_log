@@ -2,7 +2,10 @@
 
 This project implements an SQL Injection attack detection system that processes network request data, leverages deep learning for analysis, and provides real-time notifications. The pipeline is designed for inference on unseen request logs.
 
-The DATASET used in this project was taken from: https://www.kaggle.com/datasets/ispangler/csic-2010-web-application-attacks
+The DATASET used in this project was taken from: https://www.kaggle.com/datasets/ispangler/csic-2010-web-application-attacks. After parsing that data, a file named "Final_Data" was created, on which the whole model is trained.
+
+It contains columns: **Method	length	content	URL	Label**
+
 
 **SETUP INSTRUCTIONS**
 
