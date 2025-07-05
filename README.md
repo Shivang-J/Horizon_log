@@ -4,6 +4,107 @@ This project implements an SQL Injection attack detection system that processes 
 
 The DATASET used in this project was taken from: https://www.kaggle.com/datasets/ispangler/csic-2010-web-application-attacks
 
+**Setup Instructions**
+
+Follow these steps to get the SQLi Attack Detector up and running on your local machine.
+Prerequisites
+
+    Python 3.8 or higher installed.
+
+    pip (Python package installer).
+
+    Crucially, you need your trained model and preprocessor files:
+
+        A directory named saved_distilroberta_inference/ containing your saved DistilRoBERTa model and tokenizer.
+
+        best_pytorch_mlp_model.pth (your trained PyTorch MLP model weights).
+
+        length_scaler2.pkl (your saved StandardScaler object).
+
+        method_encoder.pkl (your saved OneHotEncoder object).
+
+        These files MUST be placed in the same directory as your app.py file.
+
+1. Clone the Repository (or create project directory)
+
+If this is a new project, create a directory:
+
+    mkdir sqli_detector
+    cd sqli_detector
+
+Then, place your app.py file and all the prerequisite model/preprocessor files (saved_distilroberta_inference/, best_pytorch_mlp_model.pth, length_scaler2.pkl, method_encoder.pkl) into this sqli_detector directory.
+2. Create a Virtual Environment (Recommended)
+
+It's highly recommended to use a virtual environment to manage dependencies:
+
+    python -m venv venv
+
+3. Activate the Virtual Environment
+
+    On Windows:
+
+        .\venv\Scripts\activate
+
+    On macOS/Linux:
+
+        source venv/bin/activate
+
+4. Install Dependencies
+
+With your virtual environment activated, install all required Python packages:
+
+    pip install streamlit pandas numpy torch transformers scikit-learn joblib matplotlib seaborn
+
+(Note: torch installation might vary based on your CUDA/CPU setup. Refer to PyTorch's official website for specific instructions if you encounter issues.)
+5. Configure Email Notifications (Optional but Recommended)
+
+For the email notification feature to work, you need to set up environment variables for your sender email credentials.
+
+    Using Gmail (Recommended for ease):
+
+        Go to your Google Account.
+
+        Navigate to "Security".
+
+        Under "How you sign in to Google", ensure "2-Step Verification" is ON.
+
+        Once 2-Step Verification is on, an "App passwords" option will appear (you might need to search for it or refresh the page). Click on it.
+
+        Generate a new app password. This is a 16-character code.
+
+        Set the following environment variables in your terminal before running the Streamlit app:
+
+            On Windows (Command Prompt/PowerShell):
+
+            set EMAIL_ADDRESS=your_sender_email@gmail.com
+            set EMAIL_PASSWORD=your_generated_app_password
+
+            (For PowerShell, you might use $env:EMAIL_ADDRESS="your_sender_email@gmail.com")
+
+            On macOS/Linux (Bash/Zsh):
+
+            export EMAIL_ADDRESS="your_sender_email@gmail.com"
+            export EMAIL_PASSWORD="your_generated_app_password"
+
+        (Replace your_sender_email@gmail.com and your_generated_app_password with your actual details.)
+
+        Note: These variables are session-specific. If you close your terminal, you'll need to set them again or add them to your shell's profile (.bashrc, .zshrc, etc.) for persistence.
+
+How to Run the Application
+
+Once all prerequisites are met and dependencies are installed:
+
+    Navigate to your project directory in the terminal (where app.py is located).
+
+    Ensure your virtual environment is activated.
+
+    Run the Streamlit application:
+
+    streamlit run app.py
+
+    This command will open the application in your default web browser.
+
+**HOW THE MODEL WORKS** 
 1. Data Ingestion
 - The system begins by receiving raw network request data, typically in a JSON file format. This file contains individual request records, each with details such as method (GET/POST), url, headers, and data (request body/parameters).
 
