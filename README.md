@@ -56,10 +56,8 @@ It's highly recommended to use a virtual environment to manage dependencies:
 
 4. Install Dependencies
 
-With your virtual environment activated, install all required Python packages:
+With your virtual environment activated, install all required Python packages listed in 'requirements.txt':
 
-    With your virtual environment activated, install all required Python packages listed in `requirements.txt`:
-    ```bash
     pip install -r requirements.txt
 
 (Note: torch installation might vary based on your CUDA/CPU setup. Refer to PyTorch's official website for specific instructions if you encounter issues.)
