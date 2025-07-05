@@ -13,6 +13,7 @@ Follow these steps to get the SQLi Attack Detector up and running on your local 
 Prerequisites
 
     Python 3.8 or higher installed.
+    - All required Python libraries listed in requirements.txt (will be installed automatically).
 
     pip (Python package installer).
 
@@ -57,7 +58,9 @@ It's highly recommended to use a virtual environment to manage dependencies:
 
 With your virtual environment activated, install all required Python packages:
 
-    pip install streamlit pandas numpy torch transformers scikit-learn joblib matplotlib seaborn
+    With your virtual environment activated, install all required Python packages listed in `requirements.txt`:
+    ```bash
+    pip install -r requirements.txt
 
 (Note: torch installation might vary based on your CUDA/CPU setup. Refer to PyTorch's official website for specific instructions if you encounter issues.)
 5. Configure Email Notifications (Optional but Recommended)
