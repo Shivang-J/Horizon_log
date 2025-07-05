@@ -1,6 +1,7 @@
 **SQLi Attack Detector Pipeline Overview**
 
 This project implements an SQL Injection attack detection system that processes network request data, leverages deep learning for analysis, and provides real-time notifications. The pipeline is designed for inference on unseen request logs.
+
 The DATASET used in this project was taken from: https://www.kaggle.com/datasets/ispangler/csic-2010-web-application-attacks
 
 1. Data Ingestion
